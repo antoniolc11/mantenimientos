@@ -27,5 +27,5 @@ function obtener_parametro($par, $array)
 
 function volver_admin()
 {
-    header("Location: /public/");
+    header("Location: /departamentos/");
 }

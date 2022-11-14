@@ -40,7 +40,7 @@
                             <td class="py-4 px-6 text-center">
                                 <a href="#" class="focus:outline-none text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900">Editar</a>
                                 <?php $fila_cod_depart = hh($fila['cod_depart']) ?>
-                                <form action="/borrar.php" method="POST" class="inline">
+                                <form action="/departamentos/borrar.php" method="POST" class="inline">
                                     <input type="hidden" name="cod_depart" value="<?= $fila_cod_depart ?>">
                                     <button type="submit" onclick="cambiar(event, <?= $fila_cod_depart ?>)" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900" data-modal-toggle="popup-modal">Borrar</button>
                                 </form>
@@ -67,7 +67,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                     <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">¿Estás seguro de borrar el departamento?</h3>
-                    <form action="/borrar.php" method="POST">
+                    <form action="/departamentos/borrar.php" method="POST">
                         <input id="oculto" type="hidden" name="cod_depart">
                         <button data-modal-toggle="popup-modal" type="submit" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
                             Si, borrar
