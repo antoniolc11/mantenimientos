@@ -25,7 +25,7 @@ function obtener_parametro($par, $array)
     return isset($array[$par]) ? trim($array[$par]) : null;
 }
 
-function volver_admin()
+function volver_departamentos()
 {
     header("Location: /departamentos/");
 }
