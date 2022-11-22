@@ -1,7 +1,5 @@
 <?php
 session_start();
-
-require '../../src/admin-auxiliar.php';
 require '../../src/auxiliar.php';
 
 $cod_depart = obtener_post('cod_depart');
