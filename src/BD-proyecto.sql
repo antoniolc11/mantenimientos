@@ -47,18 +47,20 @@ CREATE SEQUENCE sec_id_operario
 
 CREATE TABLE operario (
  id_oper    	  BIGINT default nextval('sec_id_operario'),
- nombre  	  VARCHAR(20) NOT NULL,
- apellido1    	  VARCHAR(20) NOT NULL,
- apellido2        VARCHAR(20) NOT NULL,
- dni 		  VARCHAR(9) NOT NULL,
+ nombre  	      VARCHAR(20) NOT NULL,
+ apellido1    	VARCHAR(20) NOT NULL,
+ apellido2      VARCHAR(20) NOT NULL,
+ dni 		        VARCHAR(9) NOT NULL,
  telefono   	  NUMERIC(9) NOT NULL,
+ usuario        VARCHAR(255) NOT NULL UNIQUE,
+ password       VARCHAR(255) NOT NULL,
  CONSTRAINT PK_operario PRIMARY KEY (id_oper));
  
 
-INSERT INTO OPERARIO VALUES (nextval('sec_id_operario'),'Antonio Fernando','Román','Fernandez','47344703P', 675523834);
-INSERT INTO OPERARIO VALUES (nextval('sec_id_operario'),'Cristina','Márquez','Rizo','32064802L', 685373829);
-INSERT INTO OPERARIO VALUES (nextval('sec_id_operario'),'Manolo','Martín','arroyo','34796147L', 674165739);
-INSERT INTO OPERARIO VALUES (nextval('sec_id_operario'),'Luis','Camilo','Pacheco','14875236R', 666248762);
+INSERT INTO OPERARIO VALUES (nextval('sec_id_operario'),'Antonio Fernando','Román','Fernandez','47344703P', 675523834, 'admin', crypt('admin', gen_salt('bf', 10)));
+INSERT INTO OPERARIO VALUES (nextval('sec_id_operario'),'Cristina','Márquez','Rizo','32064802L', 685373829, 'cmarriz07', crypt('pepe', gen_salt('bf', 10)));
+INSERT INTO OPERARIO VALUES (nextval('sec_id_operario'),'Manolo','Martín','arroyo','34796147L', 674165739, 'manolito', crypt('pepe', gen_salt('bf', 10)));
+INSERT INTO OPERARIO VALUES (nextval('sec_id_operario'),'Luis','Camilo','Pacheco','14875236R', 666248762, 'luisito', crypt('pepe', gen_salt('bf', 10)));
 
 
 ------------------- TABLA OPER_DEPART: ---------------
