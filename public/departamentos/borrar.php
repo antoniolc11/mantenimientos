@@ -6,7 +6,7 @@ $cod_depart = obtener_post('cod_depart');
 
 
 if (!isset($cod_depart)) {
-    return volver_departamentos();
+    return volver_admin();
 }
 
 // TODO: Validar id
@@ -20,7 +20,7 @@ $sent->execute([':cod_depart' => $cod_depart]);
 $existe = $sent->fetchColumn();
 if ($existe != 1) {
     $_SESSION['error'] = 'No existe el departamento.';
-    return volver_departamentos();
+    return volver_admin();
 }
 
 $sent = $pdo->prepare("SELECT count(*) 
@@ -31,7 +31,7 @@ $sent->execute([':cod_depart' => $cod_depart]);
 $tiene_empleados = $sent->fetchColumn();
 if ($tiene_empleados != 0) {
     $_SESSION['existenemple'] = 'No se puede borrar el departamento por que aún tiene trabajadores dentro.';
-    return volver_departamentos();
+    return volver_admin();
 }
 
 
@@ -40,4 +40,4 @@ $sent->execute([':cod_depart' => $cod_depart]);
 
 $_SESSION['exito'] = 'El artículo se ha borrado correctamente.';
 
-volver_departamentos();
+volver_admin();

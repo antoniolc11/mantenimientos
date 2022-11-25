@@ -9,6 +9,9 @@
     <title>Document</title>
 </head>
 <body>
+    <?php require_once '../src/auxiliar.php'; ?>
+
+
     <?php require '../src/_menu.php' ?>
 
 
