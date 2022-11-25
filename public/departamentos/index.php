@@ -18,8 +18,9 @@
 </head>
 
 <body>
-    <?php
+    <?php   
     require '../../src/auxiliar.php';
+
 
     $pdo = conectar();
     $sent = $pdo->query("SELECT * FROM departamento ORDER BY nom_depart");
