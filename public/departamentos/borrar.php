@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../../src/auxiliar.php';
+require '../../src/auxiliar2.php';
 
 $cod_depart = obtener_post('cod_depart');
 
@@ -30,7 +30,7 @@ $sent->execute([':cod_depart' => $cod_depart]);
 
 $tiene_empleados = $sent->fetchColumn();
 if ($tiene_empleados != 0) {
-    $_SESSION['existenemple'] = 'No se puede borrar el departamento por que aún tiene trabajadores dentro.';
+    $_SESSION['error'] = 'No se puede borrar el departamento por que aún tiene trabajadores dentro.';
     return volver_admin();
 }
 
